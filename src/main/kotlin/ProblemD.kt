@@ -7,21 +7,16 @@ class ProblemD {
         for(i in 0 until numberOfInputs) {
             val numberOfClients = readInt()
             val arr : LongArray = readLongArray(numberOfClients.toLong())
-            arr.sortDescending()
-
+            arr.sort()
             var highestSum : Long = 0
+            var multiplier = arr.size
 
             for(element in arr){
-                var curSum : Long = 0
-                val curPrice = element
-                for(k in 0 until arr.size){
-                    if(curPrice<=arr[k])
-                        curSum += curPrice
-                    else
-                        break
-                }
+                val curSum = element * multiplier
                 if(curSum>highestSum)
                     highestSum=curSum
+                multiplier--
+
             }
             println(highestSum)
         }
