@@ -5,11 +5,11 @@ class ProblemB {
 
         for(i in 0 until numberOfRows)
         {
-            val(a,b) = readLine()!!.split(' ')
-            var rowSize = a.toInt()
+            val input : IntArray= readIntArray(2)
+            var rowSize = input[0] // размер строки
             var startChar = 97
             while(rowSize!=0){
-                val seqSize = b.toInt()
+                val seqSize = input[1] // количество символов в последовательности
                 print(startChar.toChar())
                 startChar++
                 if(startChar-seqSize==97)
